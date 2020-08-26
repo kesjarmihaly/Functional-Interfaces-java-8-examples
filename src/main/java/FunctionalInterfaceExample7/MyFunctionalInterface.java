@@ -1,3 +1,5 @@
+package FunctionalInterfaceExample7;
+
 @FunctionalInterface
 interface MyFuncInterface {
 
