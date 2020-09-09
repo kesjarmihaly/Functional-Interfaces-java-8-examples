@@ -1,0 +1,35 @@
+package FunctionalInterfaces;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+import java.util.function.Supplier;
+
+public class FunctionalInterfaces_Lambda_Expression {
+    public static void main(String[] args) {
+
+        List<String> courses = Arrays.asList("Spring", "Spring Boot", "API" , "Microservices","AWS", "PCF","Azure", "Docker", "Kubernetes");
+
+        courses.stream()
+                .sorted()
+                .forEach(x-> System.out.println(x));
+
+        List<Integer>numbers = Arrays.asList(12, 9, 13, 4, 6, 2, 4, 12, 15);
+
+        Integer sum = numbers.stream()
+                .reduce(0,(x , y)-> x + y);
+
+        Supplier<Integer> randomSupplier = () -> {
+            // create instance of Random class
+            Random rand = new Random();
+            return rand.nextInt(1000);
+        };
+
+        System.out.println(randomSupplier.get());
+
+
+
+
+
+    }
+}
